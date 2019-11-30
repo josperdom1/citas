@@ -21,8 +21,8 @@ class Medico extends Model
         return $this->hasMany('App\Cita');
     }
 
-    public function getFullNameAttribute()
+    public function paciente()
     {
-        return $this->name .' '.$this->surname;
+        return $this->belongsToMany('App\Paciente');
     }
 }
