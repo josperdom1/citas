@@ -25,4 +25,19 @@ class Medico extends Model
     {
         return $this->name .' '.$this->surname;
     }
+
+    public function getNameSurname()
+    {
+        // First String
+        $a = 'name';
+
+        // Second String
+        $b = 'surname';
+
+        // Concatenation Of String
+        $c = $a.$b;
+
+        // print Concatenate String
+        return $c;
+    }
 }
