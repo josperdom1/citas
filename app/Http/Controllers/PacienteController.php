@@ -49,9 +49,9 @@ class PacienteController extends Controller
     {
 
         $this->validate($request, [
-            'name' => 'required|max:255',
-            'surname' => 'required|max:255',
-            'nuhsa' => 'required|nuhsa|max:255',
+            'nombre' => 'required|max:255',
+            'apellido' => 'required|max:255',
+            'nuhsa' => 'required|regex:/^AN[0,9]{10}$/',
             'enfermedad_id' => 'required|exists:enfermedads,id',
         ]);
 

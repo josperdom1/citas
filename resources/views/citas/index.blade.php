@@ -17,6 +17,7 @@
                         <table class="table table-striped table-bordered">
                             <tr>
                                 <th>Fecha</th>
+                                <td>Fecha de finalizacion</td>
                                 <th>Medico</th>
                                 <th>Paciente</th>
                                 <th colspan="2">Acciones</th>
@@ -27,6 +28,7 @@
 
                                 <tr>
                                     <td>{{ $cita->fecha_hora }}</td>
+                                    <td>{{ ($cita->fecha_hora)->add(new DateInterval('PT' . $cita->duracion . 'M'))}}</td>
                                     <td>{{ $cita->medico->full_name }}</td>
                                     <td>{{ $cita->paciente->full_name}}</td>
                                     <td>
