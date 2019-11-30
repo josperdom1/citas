@@ -8,7 +8,7 @@ class Medico extends Model
 {
     //
 
-    protected $fillable = ['name', 'surname', 'especialidad_id'];
+    protected $fillable = ['nombre', 'apellido', 'especialidad_id'];
 
 
     public function especialidad()
@@ -29,10 +29,10 @@ class Medico extends Model
     public function getNameSurname()
     {
         // First String
-        $a = 'name';
+        $a = 'nombre';
 
         // Second String
-        $b = 'surname';
+        $b = 'apellido';
 
         // Concatenation Of String
         $c = $a.$b;
