@@ -1,15 +1,13 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Cita;
+use App\Medico_paciente;
 use App\Medico;
 use App\Paciente;
-use App\Localizacion;
 
 
-class CitaController extends Controller
+class Medico_pacienteController extends Controller
 {
 
 
@@ -25,9 +23,9 @@ class CitaController extends Controller
      */
     public function index()
     {
-        $citas = Cita::all();
+        $Medico_paciente = Medico_pacientes::all();
 
-        return view('citas/index',['citas'=>$citas]);
+        return view('medico_pacientes/index',['medico_pacientes'=>$medico_pacientes]);
     }
 
     /**
@@ -41,10 +39,8 @@ class CitaController extends Controller
 
         $pacientes = Paciente::all()->pluck('full_name','id');
 
-        $localizacions = Localizacion::all()->pluck('full_name','id');
 
-
-        return view('citas/create',['medicos'=>$medicos, 'pacientes'=>$pacientes, 'localizacion'=>$localizacions]);
+        return view('medico_pacientes/create',['medicos'=>$medicos, 'pacientes'=>$pacientes]);
     }
 
     /**
@@ -58,18 +54,16 @@ class CitaController extends Controller
         $this->validate($request, [
             'medico_id' => 'required|exists:medicos,id',
             'paciente_id' => 'required|exists:pacientes,id',
-            'localizacion_id' => 'required|exists:localizacions,id',
-            'fecha_hora' => 'required|date|after:now',
 
         ]);
 
-        $cita = new Cita($request->all());
-        $cita->save();
+        $medico_paciente = new Medico_paciente($request->all());
+        $medico_paciente->save();
 
 
-        flash('Cita creada correctamente');
+        flash('Medico_paciente creada correctamente');
 
-        return redirect()->route('citas.index');
+        return redirect()->route('medico_pacientes.index');
     }
 
     /**
@@ -92,16 +86,14 @@ class CitaController extends Controller
     public function edit($id)
     {
 
-        $cita = Cita::find($id);
+        $medico_paciente = Medico_paciente::find($id);
 
         $medicos = Medico::all()->pluck('full_name','id');
 
         $pacientes = Paciente::all()->pluck('full_name','id');
 
-        $localizacions = Localizacion::all()->pluck('full_name','id');
 
-
-        return view('citas/edit',['cita'=> $cita, 'medicos'=>$medicos, 'pacientes'=>$pacientes, 'localizacions'=>$localizacions]);
+        return view('medico_pacientes/edit',['medico_paciente'=> $medico_paciente, 'medicos'=>$medicos, 'pacientes'=>$pacientes]);
     }
 
     /**
@@ -116,18 +108,16 @@ class CitaController extends Controller
         $this->validate($request, [
             'medico_id' => 'required|exists:medicos,id',
             'paciente_id' => 'required|exists:pacientes,id',
-            'localizacion_id' => 'required|exists:localizacion,id',
-            'fecha_hora' => 'required|date|after:now',
 
         ]);
-        $cita = Cita::find($id);
-        $cita->fill($request->all());
+        $medico_paciente = Medico_paciente::find($id);
+        $medico_paciente->fill($request->all());
 
-        $cita->save();
+        $medico_paciente->save();
 
-        flash('Cita modificada correctamente');
+        flash('Medico_paciente modificada correctamente');
 
-        return redirect()->route('citas.index');
+        return redirect()->route('medico_pacientes.index');
     }
 
     /**
@@ -138,10 +128,10 @@ class CitaController extends Controller
      */
     public function destroy($id)
     {
-        $cita = Cita::find($id);
-        $cita->delete();
-        flash('Cita borrada correctamente');
+        $medico_paciente = Medico_paciente::find($id);
+        $medico_paciente->delete();
+        flash('Medico_paciente borrada correctamente');
 
-        return redirect()->route('citas.index');
+        return redirect()->route('medico_paciente.index');
     }
 }
