@@ -34,7 +34,8 @@ class PacienteController extends Controller
     public function create()
     {
         //
-        return view('pacientes/create');
+        $enfermedads = Enfermedad::all()->pluck('full_name','id');
+        return view('pacientes/create',['enfermedads'=>$enfermedads]);
 
     }
 
@@ -50,7 +51,8 @@ class PacienteController extends Controller
         $this->validate($request, [
             'name' => 'required|max:255',
             'surname' => 'required|max:255',
-            'nuhsa' => 'required|nuhsa|max:255'
+            'nuhsa' => 'required|nuhsa|max:255',
+            'enfermedad_id' => 'required|exists:enfermedads,id',
         ]);
 
         //TODO: crear validación propia para nuhsa
@@ -84,8 +86,9 @@ class PacienteController extends Controller
     public function edit($id)
     {
         $paciente = Paciente::find($id);
+        $enfermedads = Enfermedad::all()->pluck('full_name','id');
 
-        return view('pacientes/edit',['paciente'=> $paciente ]);
+        return view('pacientes/edit',['paciente'=> $paciente, 'enfermedads'=>$enfermedads ]);
     }
 
     /**
@@ -100,7 +103,8 @@ class PacienteController extends Controller
         $this->validate($request, [
             'name' => 'required|max:255',
             'surname' => 'required|max:255',
-            'nuhsa' => 'required|nuhsa|max:255'
+            'nuhsa' => 'required|nuhsa|max:255',
+            'enfermedad_id' => 'required|exists:enfermedad,id',
         ]);
 
         $paciente = Paciente::find($id);
