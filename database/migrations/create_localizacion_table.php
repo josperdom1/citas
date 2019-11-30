@@ -12,7 +12,7 @@ class LocalizacionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('citas', function (Blueprint $table) {
+        Schema::create('localizacions', function (Blueprint $table) {
             $table->increments('id');
             $table->double('latitud');
             $table->double('longitud');

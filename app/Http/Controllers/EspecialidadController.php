@@ -25,9 +25,9 @@ class EspecialidadController extends Controller
         //
 
 
-        $especialidades = Especialidad::all();
+        $especialidads = Especialidad::all();
 
-        return view('especialidades/index')->with('especialidades', $especialidades);
+        return view('especialidads/index')->with('especialidads', $especialidads);
 
 
     }
@@ -39,7 +39,7 @@ class EspecialidadController extends Controller
      */
     public function create()
     {
-        return view('especialidades/create');
+        return view('especialidads/create');
     }
 
     /**
@@ -58,11 +58,11 @@ class EspecialidadController extends Controller
         $especialidad = new Especialidad($request->all());
         $especialidad->save();
 
-        // return redirect('especialidades');
+        // return redirect('especialidads');
 
         flash('Especialidad creada correctamente');
 
-        return redirect()->route('especialidades.index');
+        return redirect()->route('especialidads.index');
     }
 
     /**
@@ -87,7 +87,7 @@ class EspecialidadController extends Controller
 
         $especialidad = Especialidad::find($id);
 
-        return view('especialidades/edit')->with('especialidad', $especialidad);
+        return view('especialidads/edit')->with('especialidad', $especialidad);
     }
 
     /**
@@ -110,7 +110,7 @@ class EspecialidadController extends Controller
 
         flash('Especialidad modificada correctamente');
 
-        return redirect()->route('especialidades.index');
+        return redirect()->route('especialidads.index');
     }
 
 
@@ -126,7 +126,7 @@ class EspecialidadController extends Controller
         $especialidad->delete();
         flash('Especialidad borrada correctamente');
 
-        return redirect()->route('especialidades.index');
+        return redirect()->route('especialidads.index');
     }
 
     public function destroyAll()
@@ -134,6 +134,6 @@ class EspecialidadController extends Controller
         Especialidad::truncate();
         flash('Todas las especialidades borradas correctamente');
 
-        return redirect()->route('especialidades.index');
+        return redirect()->route('especialidads.index');
     }
 }

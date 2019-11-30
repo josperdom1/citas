@@ -14,13 +14,11 @@ class Paciente extends Model
     {
         return $this->hasMany('App\Cita');
     }
-
-
-    public function medico()
+    public function medicos()
     {
         return $this->belongsToMany('App\Medico');
     }
-    public function enfermedad(){
+    public function enfermedads(){
         return $this->belongsTo('App\Enfermedad');
     }
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Paciente;
+use App\Enfermedad;
 
 class PacienteController extends Controller
 {
@@ -59,7 +60,7 @@ class PacienteController extends Controller
         $paciente = new Paciente($request->all());
         $paciente->save();
 
-        // return redirect('especialidades');
+        // return redirect('especialidads');
 
         flash('Paciente creado correctamente');
 
@@ -88,7 +89,7 @@ class PacienteController extends Controller
         $paciente = Paciente::find($id);
         $enfermedads = Enfermedad::all()->pluck('full_name','id');
 
-        return view('pacientes/edit',['paciente'=> $paciente, 'enfermedads'=>$enfermedads ]);
+        return view('pacientes/edit',['paciente'=> $paciente, 'enfermedads'=>$enfermedads]);
     }
 
     /**
@@ -103,7 +104,7 @@ class PacienteController extends Controller
         $this->validate($request, [
             'name' => 'required|max:255',
             'surname' => 'required|max:255',
-            'nuhsa' => 'required|nuhsa|max:255',
+            'nuhsa' => 'required|regex:/^AN[0,9]{10}$/',
             'enfermedad_id' => 'required|exists:enfermedad,id',
         ]);
 
