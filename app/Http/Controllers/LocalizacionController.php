@@ -45,8 +45,8 @@ class LocalizacionController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'latitud' => 'required|max:255',
-            'longitud' =>'required|max:255',
+            'latitud' => 'required|integer|min:0',
+            'longitud' =>'required|integer|min:0',
 
         ]);
 
@@ -95,8 +95,8 @@ class LocalizacionController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'latitud' => 'required|max:255',
-            'longitud' =>'required|max:255',
+            'latitud' => 'required|integer|min:0',
+            'longitud' =>'required|integer|min:0',
 
         ]);
         $localizacion= Localizacion::find($id);

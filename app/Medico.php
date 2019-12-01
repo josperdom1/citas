@@ -11,7 +11,7 @@ class Medico extends Model
     protected $fillable = ['nombre', 'apellido', 'especialidad_id'];
 
 
-    public function especialidad()
+    public function especialidads()
     {
         return $this->belongsTo('App\Especialidad');
     }
@@ -21,7 +21,7 @@ class Medico extends Model
         return $this->hasMany('App\Cita');
     }
 
-    public function paciente()
+    public function pacientes()
     {
         return $this->belongsToMany('App\Paciente');
     }

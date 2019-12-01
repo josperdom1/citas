@@ -13,4 +13,8 @@ class Especialidad extends Model
     {
         return $this->hasMany('App\Medico');
     }
+    public function enfermedads(){
+        return $this->hasMany('App\Enfermedad');
+    }
 }
+

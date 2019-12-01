@@ -12,7 +12,7 @@ class Medico_pacientesTable extends Migration
      */
     public function up()
     {
-        Schema::create('citas', function (Blueprint $table) {
+        Schema::create('medico_pacientes', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('medico_id');
             $table->unsignedInteger('paciente_id');

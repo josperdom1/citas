@@ -36,9 +36,9 @@ class MedicoController extends Controller
     public function create()
     {
         //
-        $especialidades = Especialidad::all()->pluck('name','id');
+        $especialidads = Especialidad::all()->pluck('name','id');
 
-        return view('medicos/create',['especialidades'=>$especialidades]);
+        return view('medicos/create',['especialidads'=>$especialidads]);
 
     }
 
@@ -51,14 +51,14 @@ class MedicoController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'name' => 'required|max:255',
-            'surname' => 'required|max:255',
+            'nombre' => 'required|max:255',
+            'apellido' => 'required|max:255',
             'especialidad_id' => 'required|exists:especialidads,id'
         ]);
         $medico = new Medico($request->all());
         $medico->save();
 
-        // return redirect('especialidades');
+        // return redirect('especialidads');
 
         flash('Medico creado correctamente');
 
@@ -88,10 +88,10 @@ class MedicoController extends Controller
 
         $medico = Medico::find($id);
 
-        $especialidades = Especialidad::all()->pluck('name','id');
+        $especialidads = Especialidad::all()->pluck('name','id');
 
 
-        return view('medicos/edit',['medico'=> $medico, 'especialidades'=>$especialidades ]);
+        return view('medicos/edit',['medico'=> $medico, 'especialidads'=>$especialidads ]);
     }
 
     /**
@@ -104,8 +104,8 @@ class MedicoController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'name' => 'required|max:255',
-            'surname' => 'required|max:255',
+            'nombre' => 'required|max:255',
+            'apellido' => 'required|max:255',
             'especialidad_id' => 'required|exists:especialidads,id'
         ]);
 
