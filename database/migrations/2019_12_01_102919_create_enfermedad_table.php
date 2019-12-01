@@ -3,7 +3,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class LocalizacionsTable extends Migration
+class EnfermedadsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,11 +12,12 @@ class LocalizacionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('localizacions', function (Blueprint $table) {
+        Schema::create('enfermedads', function (Blueprint $table) {
             $table->increments('id');
-            $table->double('latitud');
-            $table->double('longitud');
+            $table->string('nombre');
+            $table->unsignedInteger('especialidad_id');
             $table->timestamps();
+            $table->foreign('especialidad_id')->references('id')->on('especialidads')->onDelete('cascade');
         });
     }
 
@@ -27,7 +28,7 @@ class LocalizacionsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('localizacions');
+        Schema::dropIfExists('enfermedads');
 
     }
 }
