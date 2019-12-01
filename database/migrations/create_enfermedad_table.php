@@ -12,11 +12,12 @@ class EnfermedadsTable extends Migration
      */
     public function up()
     {
-        Schema::create('citas', function (Blueprint $table) {
+        Schema::create('enfermedads', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nombre');
-            $table->string('especialidad');
+            $table->unsignedInteger('especialidad_id');
             $table->timestamps();
+            $table->foreign('especialidad_id')->references('id')->on('especialidads')->onDelete('cascade');
         });
     }
 

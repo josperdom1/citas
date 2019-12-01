@@ -132,6 +132,6 @@ class Medico_pacienteController extends Controller
         $medico_paciente->delete();
         flash('Medico_paciente borrada correctamente');
 
-        return redirect()->route('medico_paciente.index');
+        return redirect()->route('medico_pacientes.index');
     }
 }
