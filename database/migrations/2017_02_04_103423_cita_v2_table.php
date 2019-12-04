@@ -13,6 +13,8 @@ class CitaV2Table extends Migration
      */
     public function up()
     {
+        Schema::dropIfExists('citas');
+
         Schema::create('citas', function (Blueprint $table) {
             $table->increments('id');
             $table->dateTime('date_time');
