@@ -62,9 +62,11 @@ class CitaController extends Controller
             'fecha_hora' => 'required|date|after:now',
             'fecha_fin' => 'required|date|after:now',
 
+
         ]);
 
         $cita = new Cita($request->all());
+        $cita->fecha_fin = $cita->fecha_hora->addMinutes(15);
         $cita->save();
 
 

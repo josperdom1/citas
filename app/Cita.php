@@ -20,6 +20,6 @@ class Cita extends Model
     public function localizacion(){
         return $this->hasOne('App\Localizacion');
     }
-
+    protected $dates = ['fecha_hora', 'fecha_fin'];
 
 }
