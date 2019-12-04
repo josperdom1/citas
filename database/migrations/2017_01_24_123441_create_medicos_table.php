@@ -18,7 +18,7 @@ class CreateMedicosTable extends Migration
             $table->string('nombre');
             $table->string('apellido');
             $table->string('especialidad');
-            $table->foreign('especialidad_id')->references('id')->on('especialidads')->onDelete('cascade');
+            $table->foreign('especialidad_id')->references('id')->on('especialidads')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });    }
 

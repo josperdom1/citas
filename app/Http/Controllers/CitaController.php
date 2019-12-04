@@ -60,7 +60,7 @@ class CitaController extends Controller
             'paciente_id' => 'required|exists:pacientes,id',
             'localizacion_id' => 'required|exists:localizacions,id',
             'fecha_hora' => 'required|date|after:now',
-            'duracion' => 'required|integer|min:0',
+            'fecha_fin' => 'required|date|after:now',
 
         ]);
 
@@ -119,7 +119,7 @@ class CitaController extends Controller
             'paciente_id' => 'required|exists:pacientes,id',
             'localizacion_id' => 'required|exists:localizacion,id',
             'fecha_hora' => 'required|date|after:now',
-            'duracion' => 'required|integer|min:0',
+            'fecha_fin' => 'required|date|after:now',
 
         ]);
         $cita = Cita::find($id);

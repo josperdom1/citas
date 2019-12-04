@@ -28,7 +28,7 @@
 
                                 <tr>
                                     <td>{{ $cita->fecha_hora }}</td>
-                                    <td>{{ ($cita->fecha_hora)->add(new DateInterval('PT' . $cita->duracion . 'M'))}}</td>
+                                    <td>{{ ($cita->fecha_fin)}}</td>
                                     <td>{{ $cita->medico->full_name }}</td>
                                     <td>{{ $cita->paciente->full_name}}</td>
                                     <td>
