@@ -25,19 +25,4 @@ class Medico extends Model
     {
         return $this->belongsToMany('App\Paciente');
     }
-
-    public function getNameSurname()
-    {
-        // First String
-        $a = 'nombre';
-
-        // Second String
-        $b = 'apellido';
-
-        // Concatenation Of String
-        $c = $a.$b;
-
-        // print Concatenate String
-        return $c;
-    }
 }
