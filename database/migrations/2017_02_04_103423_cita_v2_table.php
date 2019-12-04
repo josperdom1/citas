@@ -18,7 +18,7 @@ class CitaV2Table extends Migration
         Schema::create('citas', function (Blueprint $table) {
             $table->increments('id');
             $table->dateTime('date_time');
-            $table->integer('duration')->default(15);
+            $table->dateTime('fecha_fin');
             $table->unsignedInteger('medico_id');
             $table->unsignedInteger('paciente_id');
             $table->unsignedInteger('localizacion_id');

@@ -47,6 +47,7 @@ class LocalizacionController extends Controller
         $this->validate($request, [
             'latitud' => 'required|integer|min:0',
             'longitud' =>'required|integer|min:0',
+            'nombre' => 'required|max:255',
 
         ]);
 
@@ -97,6 +98,7 @@ class LocalizacionController extends Controller
         $this->validate($request, [
             'latitud' => 'required|integer|min:0',
             'longitud' =>'required|integer|min:0',
+            'nombre' =>'required|max:255',
 
         ]);
         $localizacion= Localizacion::find($id);
