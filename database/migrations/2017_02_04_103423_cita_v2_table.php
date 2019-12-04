@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CitasTable extends Migration
+class CitaV2Table extends Migration
 {
     /**
      * Run the migrations.
@@ -15,8 +15,8 @@ class CitasTable extends Migration
     {
         Schema::create('citas', function (Blueprint $table) {
             $table->increments('id');
-            $table->dateTime('fecha_hora');
-            $table->integer('duracion')->default(15);
+            $table->dateTime('date_time');
+            $table->integer('duration')->default(15);
             $table->unsignedInteger('medico_id');
             $table->unsignedInteger('paciente_id');
             $table->unsignedInteger('localizacion_id');
@@ -34,7 +34,13 @@ class CitasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('citas');
+        Schema::drop('citas');
 
+        Schema::create('citas', function (Blueprint $table) {
+            $table->increments('id');
+            $table->dateTime('date_time');
+            $table->integer('duration');
+            $table->timestamps();
+        });
     }
 }
