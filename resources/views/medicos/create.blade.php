@@ -22,7 +22,7 @@
                         <div class="form-group">
                             {!!Form::label('especialidad_id', 'Especialidad medico') !!}
                             <br>
-                            {!! Form::select('especialidad_id', $especialidades, ['class' => 'form-control', 'required']) !!}
+                            {!! Form::select('especialidad_id', $especialidads, ['class' => 'form-control', 'required']) !!}
                         </div>
                         {!! Form::submit('Guardar',['class'=>'btn-primary btn']) !!}
 
