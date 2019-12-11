@@ -22,7 +22,7 @@ class EnfermedadController extends Controller
      */
     public function index()
     {
-        $enfermedad = Enfermedad::all();
+        $enfermedads = Enfermedad::all();
 
         return view('enfermedads/index',['enfermedads'=>$enfermedads]);
     }
@@ -35,7 +35,7 @@ class EnfermedadController extends Controller
     public function create()
     {
 
-        $especialidades = Especialidad::all()->pluck('name','id');
+        $especialidads = Especialidad::all()->pluck('name','id');
         return view('enfermedads/create',['especialidads'=>$especialidads]);
     }
 

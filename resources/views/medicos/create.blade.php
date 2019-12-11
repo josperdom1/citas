@@ -12,12 +12,12 @@
 
                         {!! Form::open(['route' => 'medicos.store']) !!}
                         <div class="form-group">
-                            {!! Form::label('name', 'Nombre del medico') !!}
-                            {!! Form::text('name',null,['class'=>'form-control', 'required', 'autofocus']) !!}
+                            {!! Form::label('nombre', 'Nombre del medico') !!}
+                            {!! Form::text('nombre',null,['class'=>'form-control', 'required', 'autofocus']) !!}
                         </div>
                         <div class="form-group">
-                            {!! Form::label('surname', 'Apellidos del medico') !!}
-                            {!! Form::text('surname',null,['class'=>'form-control', 'required']) !!}
+                            {!! Form::label('apellido', 'Apellidos del medico') !!}
+                            {!! Form::text('apellido',null,['class'=>'form-control', 'required']) !!}
                         </div>
                         <div class="form-group">
                             {!!Form::label('especialidad_id', 'Especialidad medico') !!}
