@@ -17,26 +17,26 @@
                         <table class="table table-striped table-bordered">
                             <tr>
                                 <th>Nombre</th>
-                                <th>Longitud</th>
-                                <th>Nombre</th>
+                                <th>Apellido</th>
+                                <th>Especialidad</th>
                                 <th colspan="2">Acciones</th>
                             </tr>
 
-                            @foreach ($localizacions as $localizacion)
+                            @foreach ($medicos as $medico)
 
 
                                 <tr>
-                                    <td>{{ $localizacion->latitud }}</td>
-                                    <td>{{ $localizacion->longitud }}</td>
-                                    <td>{{ $localizacion->nombre }}</td>
+                                    <td>{{ $medico->nombre }}</td>
+                                    <td>{{ $medico->apellido }}</td>
+                                    <td>{{ $medico->especialidad->full_name }}</td>
 
                                     <td>
-                                        {!! Form::open(['route' => ['$localizacions.edit',$localizacion->id], 'method' => 'get']) !!}
+                                        {!! Form::open(['route' => ['$medicos.edit',$medico->id], 'method' => 'get']) !!}
                                         {!!   Form::submit('Editar', ['class'=> 'btn btn-warning'])!!}
                                         {!! Form::close() !!}
                                     </td>
                                     <td>
-                                        {!! Form::open(['route' => ['$localizacions.destroy',$localizacion->id], 'method' => 'delete']) !!}
+                                        {!! Form::open(['route' => ['$medicos.destroy',$medico->id], 'method' => 'delete']) !!}
                                         {!!   Form::submit('Borrar', ['class'=> 'btn btn-danger' ,'onclick' => 'if(!confirm("¿Está seguro?"))event.preventDefault();'])!!}
                                         {!! Form::close() !!}
 

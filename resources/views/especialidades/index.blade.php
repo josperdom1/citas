@@ -23,7 +23,7 @@
                                 <th>Nombre</th>
                                 <th colspan="2">Acciones</th>
                             </tr>
-                            @foreach ($especialidades as $especialidad)
+                            @foreach ($especialidads as $especialidad)
                             <tr>
                                 <td>{{ $especialidad->name }}</td>
                                 <td>
