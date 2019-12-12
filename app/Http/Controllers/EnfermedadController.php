@@ -82,7 +82,7 @@ class EnfermedadController extends Controller
     {
 
         $enfermedad = Enfermedad::find($id);
-        $especialidads = Especialidad::all()->pluck('name','id');
+        $especialidads = Especialidad::all()->pluck('nombre','id');
 
         return view('enfermedads/edit',['enfermedad'=> $enfermedad,'especialidads'=>$especialidads]);
     }
