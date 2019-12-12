@@ -29,7 +29,6 @@
                                     <td>{{ $medico->nombre }}</td>
                                     <td>{{ $medico->apellido }}</td>
                                     <td>{{ $medico->especialidad->nombre }}</td>
-
                                     <td>
                                         {!! Form::open(['route' => ['$medicos.edit',$medico->id], 'method' => 'get']) !!}
                                         {!!   Form::submit('Editar', ['class'=> 'btn btn-warning'])!!}
