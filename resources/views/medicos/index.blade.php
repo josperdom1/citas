@@ -9,14 +9,14 @@
 
                     <div class="panel-body">
                         @include('flash::message')
-                        {!! Form::open(['route' => 'localizacions.create', 'method' => 'get']) !!}
-                        {!!   Form::submit('Crear localizacion', ['class'=> 'btn btn-primary'])!!}
+                        {!! Form::open(['route' => 'medicos.create', 'method' => 'get']) !!}
+                        {!!   Form::submit('Crear médico', ['class'=> 'btn btn-primary'])!!}
                         {!! Form::close() !!}
 
                         <br><br>
                         <table class="table table-striped table-bordered">
                             <tr>
-                                <th>Latitud</th>
+                                <th>Nombre</th>
                                 <th>Longitud</th>
                                 <th>Nombre</th>
                                 <th colspan="2">Acciones</th>
