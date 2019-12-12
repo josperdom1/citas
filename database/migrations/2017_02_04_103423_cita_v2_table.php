@@ -41,7 +41,7 @@ class CitaV2Table extends Migration
         Schema::create('citas', function (Blueprint $table) {
             $table->increments('id');
             $table->dateTime('fecha_hora');
-            $table->dateTime('duration');
+            $table->dateTime('fecha_fin');
             $table->timestamps();
         });
     }
