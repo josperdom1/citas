@@ -23,6 +23,8 @@ class PacientesAseguradoraTable extends Migration
             $table->string('nuhsa');
             $table->unsignedInteger('aseguradora_id')->nullable();
             $table->foreign('aseguradora_id')->references('id')->on('aseguradoras');
+            $table->unsignedInteger('enfermedad_id');
+            $table->foreign('enfermedad_id')->references('id')->on('enfermedads')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }
