@@ -31,8 +31,6 @@ class LocalizacionController extends Controller
      */
     public function create()
     {
-
-
         return view('localizacions/create');
     }
 
