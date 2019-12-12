@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Especialidads</div>
+                    <div class="panel-heading">Especialidades</div>
 
                     <div class="panel-body">
                         @include('flash::message')
@@ -23,7 +23,7 @@
                                 <th>Nombre</th>
                                 <th colspan="2">Acciones</th>
                             </tr>
-                            @foreach ($especialidades as $especialidad)
+                            @foreach ($especialidads as $especialidad)
                             <tr>
                                 <td>{{ $especialidad->name }}</td>
                                 <td>
