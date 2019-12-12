@@ -36,7 +36,7 @@ class MedicoController extends Controller
     public function create()
     {
         //
-        $especialidads = Especialidad::all()->pluck('nombre','id');
+        $especialidads = Especialidad::all()->pluck('full_name','id');
 
         return view('medicos/create',['especialidads'=>$especialidads]);
 
