@@ -55,15 +55,19 @@ class CitaController extends Controller
      */
     public function store(Request $request)
     {
+
+
+
         $this->validate($request, [
             'medico_id' => 'required|exists:medicos,id',
             'paciente_id' => 'required|exists:pacientes,id',
             'localizacion_id' => 'required|exists:localizacions,id',
             'fecha_hora' => 'required|date|after:now',
-            'fecha_fin' => 'required|date|after:now',
+
 
 
         ]);
+
 
         $cita = new Cita($request->all());
         $cita->fecha_fin = $cita->fecha_hora->addMinutes(15);
@@ -121,9 +125,10 @@ class CitaController extends Controller
             'paciente_id' => 'required|exists:pacientes,id',
             'localizacion_id' => 'required|exists:localizacion,id',
             'fecha_hora' => 'required|date|after:now',
-            'fecha_fin' => 'required|date|after:now',
+
 
         ]);
+
         $cita = Cita::find($id);
         $cita->fill($request->all());
 

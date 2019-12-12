@@ -16,6 +16,9 @@ class EnfermedadsTableSeeder extends Seeder
             'nombre' => Str::random(10),
             'id' => '0',
             'id_especialidad'=>'0',
+
+
+
             /** Como se asignan valores a id y foreign keys?
              *  A qué columnas hay que propocionar seeds?
              * @todo
