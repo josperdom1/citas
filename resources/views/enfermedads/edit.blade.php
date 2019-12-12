@@ -14,7 +14,7 @@
 
                         <div class="form-group">
                             {!! Form::label('nombre', 'Nombre de la enfermedad') !!}
-                            {!! Form::text('nombre',$enfermedad->name,['class'=>'form-control', 'required', 'autofocus']) !!}
+                            {!! Form::text('nombre',$enfermedad->nombre,['class'=>'form-control', 'required', 'autofocus']) !!}
                         </div>
                         <div class="form-group">
                             {!!Form::label('especialidad_id', 'Especialidad enfermedad') !!}

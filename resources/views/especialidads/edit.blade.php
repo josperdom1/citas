@@ -14,7 +14,7 @@
                         <div class="form-group">
 
                         {!! Form::label('nombre', 'Nombre de la especialidad') !!}
-                        {!! Form::text('nombre',$especialidad->name,['class'=>'form-control', 'required', 'autofocus']) !!}
+                        {!! Form::text('nombre',$especialidad->nombre,['class'=>'form-control', 'required', 'autofocus']) !!}
                         </div>
                         {!! Form::submit('Actualizar',['class'=>'btn-primary btn']) !!}
                         {!! Form::close() !!}
