@@ -20,8 +20,6 @@ class CreatePacientesTable extends Migration
             $table->string('nuhsa');
             $table->unsignedInteger('enfermedad_id');
             $table->timestamps();
-
-
             $table->foreign('enfermedad_id')->references('id')->on('enfermedads')->onDelete('cascade')->onUpdate('cascade');
         });
     }

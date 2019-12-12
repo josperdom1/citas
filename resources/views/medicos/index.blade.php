@@ -28,7 +28,7 @@
                                 <tr>
                                     <td>{{ $medico->nombre }}</td>
                                     <td>{{ $medico->apellido }}</td>
-                                    <td>{{ $medico->especialidad->full_name }}</td>
+                                    <td>{{ $medico->especialidad->nombre}}</td>
 
                                     <td>
                                         {!! Form::open(['route' => ['$medicos.edit',$medico->id], 'method' => 'get']) !!}

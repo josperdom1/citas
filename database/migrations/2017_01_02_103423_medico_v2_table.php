@@ -21,7 +21,7 @@ class MedicoV2Table extends Migration
             $table->string('apellido');
             $table->unsignedInteger('especialidad_id');
             $table->timestamps();
-            $table->foreign('especialidad_id')->references('id')->on('especialidads')->onDelete('cascade');
+            $table->foreign('especialidad_id')->references('id')->on('especialidads')->onDelete('cascade')->onUpdate('cascade');
 
         });
     }
