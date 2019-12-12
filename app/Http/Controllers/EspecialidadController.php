@@ -132,7 +132,7 @@ class EspecialidadController extends Controller
     public function destroyAll()
     {
         Especialidad::truncate();
-        flash('Todas las especialidades borradas correctamente');
+        flash('Todas las especialidads borradas correctamente');
 
         return redirect()->route('especialidads.index');
     }
