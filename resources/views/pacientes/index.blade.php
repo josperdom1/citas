@@ -27,8 +27,8 @@
 
 
                                 <tr>
-                                    <td>{{ $paciente->name }}</td>
-                                    <td>{{ $paciente->surname }}</td>
+                                    <td>{{ $paciente->nombre }}</td>
+                                    <td>{{ $paciente->apellido }}</td>
                                     <td>{{ $paciente->nuhsa }}</td>
                                     <td>
                                         {!! Form::open(['route' => ['pacientes.edit',$paciente->id], 'method' => 'get']) !!}

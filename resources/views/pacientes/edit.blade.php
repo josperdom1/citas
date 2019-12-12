@@ -14,11 +14,11 @@
 
                         <div class="form-group">
                             {!! Form::label('nombre', 'Nombre del paciente') !!}
-                            {!! Form::text('nombre',$paciente->name,['class'=>'form-control', 'required', 'autofocus']) !!}
+                            {!! Form::text('nombre',$paciente->nombre,['class'=>'form-control', 'required', 'autofocus']) !!}
                         </div>
                         <div class="form-group">
                             {!! Form::label('apellido', 'Apellidos del paciente') !!}
-                            {!! Form::text('apellido',$paciente->surname,['class'=>'form-control', 'required']) !!}
+                            {!! Form::text('apellido',$paciente->apellido,['class'=>'form-control', 'required']) !!}
                         </div>
                         <div class="form-group">
                             {!! Form::label('nuhsa', 'NUHSA del paciente') !!}

@@ -17,8 +17,8 @@ class MedicoV2Table extends Migration
 
         Schema::create('medicos', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->string('surname');
+            $table->string('nombre');
+            $table->string('apellido');
             $table->unsignedInteger('especialidad_id');
             $table->timestamps();
             $table->foreign('especialidad_id')->references('id')->on('especialidads')->onDelete('cascade');
@@ -37,8 +37,8 @@ class MedicoV2Table extends Migration
 
         Schema::create('medicos', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->string('surname');
+            $table->string('nombre');
+            $table->string('apellido');
             $table->timestamps();
         });
     }
