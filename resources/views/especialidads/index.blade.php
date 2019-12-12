@@ -26,6 +26,7 @@
                             @foreach ($especialidads as $especialidad)
                             <tr>
                                 <td>{{ $especialidad->nombre }}</td>
+
                                 <td>
                                     {!! Form::open(['route' => ['especialidads.edit',$especialidad->id], 'method' => 'get']) !!}
                                     {!!   Form::submit('Editar', ['class'=> 'btn btn-warning'])!!}
