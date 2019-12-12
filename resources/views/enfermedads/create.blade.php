@@ -12,8 +12,8 @@
 
                         {!! Form::open(['route' => 'enfermedads.store']) !!}
                         <div class="form-group">
-                            {!! Form::label('name', 'Nombre de la enfermedad') !!}
-                            {!! Form::text('name',null,['class'=>'form-control', 'required', 'autofocus']) !!}
+                            {!! Form::label('nombre', 'Nombre de la enfermedad') !!}
+                            {!! Form::text('nombre',null,['class'=>'form-control', 'required', 'autofocus']) !!}
                         </div>
                         <div class="form-group">
                             {!!Form::label('especialidad_id', 'Especialidad enfermedad') !!}
