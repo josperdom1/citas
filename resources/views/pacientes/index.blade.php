@@ -19,6 +19,7 @@
                                 <th>Nombre</th>
                                 <th>Apellidos</th>
                                 <th>Nuhsa</th>
+                                <th>Enfermedad</th>
 
                                 <th colspan="2">Acciones</th>
                             </tr>
@@ -30,6 +31,7 @@
                                     <td>{{ $paciente->nombre }}</td>
                                     <td>{{ $paciente->apellido }}</td>
                                     <td>{{ $paciente->nuhsa }}</td>
+                                    <td>{{ $paciente->enfermedad->nombre }}</td>
                                     <td>
                                         {!! Form::open(['route' => ['pacientes.edit',$paciente->id], 'method' => 'get']) !!}
                                         {!!   Form::submit('Editar', ['class'=> 'btn btn-warning'])!!}
