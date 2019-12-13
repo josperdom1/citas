@@ -22,11 +22,11 @@
                                 <th colspan="2">Acciones</th>
                             </tr>
 
-                            @foreach ($localizacion as $localizacion)
+                            @foreach ($localizacions as $localizacion)
 
 
                                 <tr>
-                                    <td>{{ $localizacion->name }}</td>
+                                    <td>{{ $localizacion->nombre }}</td>
                                     <td>{{ $localizacion->longitud }}</td>
                                     <td>{{ $localizacion->latitud }}</td>
 

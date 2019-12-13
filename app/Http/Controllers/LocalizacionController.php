@@ -1,11 +1,14 @@
 <?php
+
+namespace App\Http\Controllers;
+
 use Illuminate\Http\Request;
+
 use App\Localizacion;
 
 
 class LocalizacionController extends Controller
 {
-
 
     public function __construct()
     {
@@ -78,7 +81,7 @@ class LocalizacionController extends Controller
     public function edit($id)
     {
 
-        $localizacion = Localizacions::find($id);
+        $localizacion = Localizacion::find($id);
 
 
         return view('localizacions/edit',['localizacion'=>$localizacion]);
