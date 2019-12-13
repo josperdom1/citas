@@ -14,14 +14,12 @@ class CreatePacientesTable extends Migration
     public function up()
     {
         Schema::create('pacientes', function (Blueprint $table) {
-            $table->increments('id');
             $table->string('nombre');
             $table->string('apellido');
             $table->string('nuhsa');
+            $table->increments('id');
             $table->unsignedInteger('enfermedad_id');
             $table->timestamps();
-
-
             $table->foreign('enfermedad_id')->references('id')->on('enfermedads')->onDelete('cascade')->onUpdate('cascade');
         });
     }

@@ -28,15 +28,14 @@
                                 <tr>
                                     <td>{{ $medico->nombre }}</td>
                                     <td>{{ $medico->apellido }}</td>
-                                    <td>{{ $medico->especialidad->full_name }}</td>
-
+                                    <td>{{ $medico->especialidad_id}}</td>
                                     <td>
-                                        {!! Form::open(['route' => ['$medicos.edit',$medico->id], 'method' => 'get']) !!}
+                                        {!! Form::open(['route' => ['medicos.edit',$medico->id], 'method' => 'get']) !!}
                                         {!!   Form::submit('Editar', ['class'=> 'btn btn-warning'])!!}
                                         {!! Form::close() !!}
                                     </td>
                                     <td>
-                                        {!! Form::open(['route' => ['$medicos.destroy',$medico->id], 'method' => 'delete']) !!}
+                                        {!! Form::open(['route' => ['medicos.destroy',$medico->id], 'method' => 'delete']) !!}
                                         {!!   Form::submit('Borrar', ['class'=> 'btn btn-danger' ,'onclick' => 'if(!confirm("¿Está seguro?"))event.preventDefault();'])!!}
                                         {!! Form::close() !!}
 

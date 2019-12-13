@@ -89,6 +89,12 @@
                                         </a>
                                     </li>
 
+                                    <li>
+                                        <a href="{{ url('/localizacions') }}">
+                                            Localizaciones
+                                        </a>
+                                    </li>
+
 
                                     <li>
                                         <a href="{{ url('/logout') }}"
