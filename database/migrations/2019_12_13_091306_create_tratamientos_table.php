@@ -14,6 +14,9 @@ class CreateTratamientosTable extends Migration
     public function up()
     {
         Schema::create('tratamientos', function (Blueprint $table) {
+            $table->string('fecha_inicial');
+            $table->string('fecha_fin');
+            $table->string('descripcion');
             $table->increments('id');
             $table->timestamps();
         });
