@@ -8,9 +8,9 @@ class Medicamento extends Model
 {
     protected $fillable = ['nombre', 'composicion', 'descripcion', 'link'];
 
-    public function tratamiento()
+    public function medTratamientos()
     {
-        return $this->belongsTo('App\Tratamiento');
+        return $this->belongsToMany('App\MedTratamiento');
     }
 
 

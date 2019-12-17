@@ -37,11 +37,11 @@ class CitaController extends Controller
      */
     public function create()
     {
-        $medicos = Medico::all()->pluck('nombre','id');
+        $medicos = Medico::all()->pluck('full_name','id');
 
-        $pacientes = Paciente::all()->pluck('nombre','id');
+        $pacientes = Paciente::all()->pluck('full_name','id');
 
-        $localizacions = Localizacion::all()->pluck('nombre','id');
+        $localizacions = Localizacion::all()->pluck('full_name','id');
 
 
         return view('citas/create',['medicos'=>$medicos, 'pacientes'=>$pacientes, 'localizacions'=>$localizacions]);
@@ -64,7 +64,6 @@ class CitaController extends Controller
             'localizacion_id' => 'required|exists:localizacions,id',
             'fecha_hora' => 'required|date|after:now',
             'fecha_fin' => 'required|date|after:now',
-
 
 
         ]);
@@ -102,11 +101,11 @@ class CitaController extends Controller
 
         $cita = Cita::find($id);
 
-        $medicos = Medico::all()->pluck('nombre','id');
+        $medicos = Medico::all()->pluck('full_name','id');
 
-        $pacientes = Paciente::all()->pluck('nombre','id');
+        $pacientes = Paciente::all()->pluck('full_name','id');
 
-        $localizacions = Localizacion::all()->pluck('nombre','id');
+        $localizacions = Localizacion::all()->pluck('full_name','id');
 
 
         return view('citas/edit',['cita'=> $cita, 'medicos'=>$medicos, 'pacientes'=>$pacientes, 'localizacions'=>$localizacions]);
