@@ -22,8 +22,8 @@ Route::resource('pacientes', 'PacienteController');
 Route::resource('citas', 'CitaController');
 Route::resource('enfermedads', 'EnfermedadController');
 Route::resource('localizacions', 'LocalizacionController');
-
-
+Route::resource('tratamientos', 'TratamientoController');
+Route::resource('medicamentos', 'MedicamentoController');
 
 
 Auth::routes();

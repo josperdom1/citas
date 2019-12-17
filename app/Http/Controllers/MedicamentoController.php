@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Medicamento;
 
-class Medicamento extends Controller
+class MedicamentoController extends Controller
 
 {
     public function __construct()
