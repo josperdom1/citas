@@ -6,20 +6,16 @@ use Illuminate\Database\Eloquent\Model;
 
 class Tratamiento extends Model
 {
-    protected $fillable = ['fecha_ini', 'fecha_fin', 'descripcion', 'medicamento_id'];
+    protected $fillable = ['nombre', 'fecha_inicio', 'fecha_fin', 'descripcion'];
 
-    public function medicamentos()
+    public function medicamento()
     {
-        return $this->belongsToMany('App\Medicamento');
+        return $this->hasMany('App\Medicamento');
+    }
+    public function medTratamiento()
+    {
+        return $this->hasMany('App\MedTratamiento');
     }
 
-    protected $dates = ['fecha_ini', 'fecha_fin'];
-
-    public function setFecha_iniAttribute( $value ) {
-        $this->attributes['fecha_ini'] = Carbon::parse('Y-m-d', $value);
-    }
-
-    public function setFecha_finAttribute( $value ) {
-        $this->attributes['fecha_fin'] = Carbon::parse('Y-m-d', $value);
-    }
+    protected $dates = ['fecha_inicio', 'fecha_fin'];
 }
