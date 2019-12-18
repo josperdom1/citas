@@ -48,7 +48,7 @@ class MedicamentoController extends Controller
             'nombre' => 'required|max:255',
             'composicion' => 'required|max:255',
             'presentacion' => 'required|max:255',
-            'link' => 'required|max:255',
+            'enlace' => 'required|max:255',
 
             // esto no se si esta bien definido, especialmente el link
         ]);
@@ -101,7 +101,7 @@ class MedicamentoController extends Controller
             'nombre' => 'required|max:255',
             'composicion' => 'required|max:255',
             'presentacion' => 'required|max:255',
-            'link' => 'required|max:255',
+            'enlace' => 'required|max:255',
 
         ]);
 
