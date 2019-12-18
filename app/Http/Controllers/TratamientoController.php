@@ -45,7 +45,7 @@ class TratamientoController extends Controller
         $this->validate($request, [
             'nombre' => 'required|max:255',
             'descripcion'=>'required|max:255',
-            'fecha_inicio' => 'required|date|after:now',
+            'fecha_hora' => 'required|date|after:now',
             'fecha_fin' => 'required|date|after:now',
         ]);
 
@@ -57,7 +57,7 @@ class TratamientoController extends Controller
 
         flash('Tratamiento creado correctamente');
 
-        return redirect()->route('tratamiento.index');
+        return redirect()->route('tratamientos.index');
     }
 
     /**
@@ -94,7 +94,7 @@ class TratamientoController extends Controller
         $this->validate($request, [
             'nombre' => 'required|max:255',
             'descripcion'=>'required|max:255',
-            'fecha_inicio' => 'required|date|after:now',
+            'fecha_hora' => 'required|date|after:now',
             'fecha_fin' => 'required|date|after:now',
 
         ]);

@@ -14,7 +14,7 @@ class CreateTratamientosTable extends Migration
     public function up()
     {
         Schema::create('tratamientos', function (Blueprint $table) {
-            $table->dateTime('fecha_inicio');
+            $table->dateTime('fecha_hora');
             $table->dateTime('fecha_fin');
             $table->string('descripcion');
             $table->string('nombre');

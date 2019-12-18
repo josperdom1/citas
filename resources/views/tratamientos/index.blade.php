@@ -27,7 +27,7 @@
 
 
                                 <tr>
-                                    <td>{{ $tratamiento->fecha_inicio }}</td>
+                                    <td>{{ $tratamiento->fecha_hora }}</td>
                                     <td>{{ $tratamiento->fecha_fin }}</td>
                                     <td>{{ $tratamiento->descripcion}}</td>
                                     <td>{{ $tratamiento->nombre}}</td>

@@ -13,9 +13,9 @@
                         {!! Form::open(['route' => 'tratamientos.store']) !!}
 
                         <div class="form-group">
-                            {!! Form::label('fecha_inicio', 'Fecha de inicio del tratamiento') !!}
+                            {!! Form::label('fecha_hora', 'Fecha de inicio del tratamiento') !!}
 
-                            <input type="datetime-local" id="fecha_inicio" name="fecha_inicio" class="form-control" value="{{Carbon\Carbon::now()->addMinute()->format('Y-m-d')}}" />
+                            <input type="datetime-local" id="fecha_hora" name="fecha_hora" class="form-control" value="{{Carbon\Carbon::now()->addMinute()->format('Y-m-d')}}" />
                         </div>
 
                         <div class="form-group">

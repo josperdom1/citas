@@ -13,9 +13,9 @@
                         {!! Form::model($tratamiento, [ 'route' => ['tratamientos.update',$tratamiento->id], 'method'=>'PUT']) !!}
 
                         <div class="form-group">
-                            {!! Form::label('fecha_inicio', 'Fecha de inicio del tratamiento') !!}
+                            {!! Form::label('fecha_hora', 'Fecha de inicio del tratamiento') !!}
 
-                            <input type="datetime-local" id="fecha_ini" name="fecha_ini" class="form-control" value="{{Carbon\Carbon::now()->addMinute()->format('Y-m-d')}}" />
+                            <input type="datetime-local" id="fecha_hora" name="fecha_hora" class="form-control" value="{{Carbon\Carbon::now()->addMinute()->format('Y-m-d')}}" />
                         </div>
 
                         <div class="form-group">
