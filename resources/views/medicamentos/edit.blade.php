@@ -25,6 +25,10 @@
                             {!!Form::label('composicion', 'Composicion') !!}
                             {!! Form::select('composicion', $medicamento->composicion, ['class' => 'form-control', 'required']) !!}
                         </div>
+                        <div class="form-group">
+                            {!!Form::label('enlace', 'Enclace') !!}
+                            {!! Form::select('enlace', $medicamento->enlace, ['class' => 'form-control', 'required']) !!}
+                        </div>
 
 
                         {!! Form::submit('Actualizar',['class'=>'btn-primary btn']) !!}
