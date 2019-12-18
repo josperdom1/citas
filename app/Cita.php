@@ -30,6 +30,4 @@ class Cita extends Model
         $this->attributes['fecha_fin'] = Carbon::parse('Y-m-d\TH:i', $value);
     }
 
-
-
 }
