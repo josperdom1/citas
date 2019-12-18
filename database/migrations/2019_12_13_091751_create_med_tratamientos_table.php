@@ -15,6 +15,13 @@ class CreateMedTratamientosTable extends Migration
     {
         Schema::create('med_tratamientos', function (Blueprint $table) {
             $table->increments('id');
+            $table->unsignedBigInteger('medicamento_id');
+            $table->unsignedBigInteger('tratamiento_id');
+            $table->dateTime('fecha_ini');
+            $table->dateTime('fecha_fin');
+            $table->string('frecuencia');
+            $table->string('unidades');
+            $table->string('instrucciones');
             $table->timestamps();
         });
     }

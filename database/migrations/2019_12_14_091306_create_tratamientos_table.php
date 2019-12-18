@@ -15,6 +15,9 @@ class CreateTratamientosTable extends Migration
     {
         Schema::create('tratamientos', function (Blueprint $table) {
             $table->increments('id');
+            $table->dateTime('fecha_ini');
+            $table->dateTime('fecha_fin');
+            $table->string('descripcion');
             $table->timestamps();
         });
     }
