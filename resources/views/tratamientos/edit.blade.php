@@ -28,9 +28,8 @@
                             {!! Form::text('descripcion',$tratamiento->descripcion,['class'=>'form-control', 'required', 'autofocus']) !!}
                         </div>
                         <div class="form-group">
-                            {!!Form::label('medtratamiento', 'Medicamento del tratamiento') !!}
-                            <br>
-                            {!! Form::select('medtratamiento_id', $medtratamientos, $tratamiento->medtratamiento_id, ['class' => 'form-control']) !!}
+                            {!! Form::label('nombre', 'Nombre del tratamiento') !!}
+                            {!! Form::text('nombre',$tratamiento->nombre,['class'=>'form-control', 'required', 'autofocus']) !!}
                         </div>
 
                         {!! Form::submit('Actualizar',['class'=>'btn-primary btn']) !!}

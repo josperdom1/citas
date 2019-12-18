@@ -18,8 +18,8 @@
                             <tr>
                                 <th>Fecha de inicio</th>
                                 <th>Fecha de finalizacion</th>
-                                <th>Descripcion
-                                <th>Medicamentos</th>
+                                <th>Descripcion<th>
+                                <th>Nombre<th>
                                 <th colspan="2">Acciones</th>
                             </tr>
 
@@ -30,7 +30,7 @@
                                     <td>{{ $tratamiento->fecha_ini }}</td>
                                     <td>{{ $tratamiento->fecha_fin }}</td>
                                     <td>{{ $tratamiento->descripcion}}</td>
-                                    <td>{{ $tratamiento->medtratamiento_id }}</td>
+                                    <td>{{ $tratamiento->nombre}}</td>
 
 
                                     <td>
