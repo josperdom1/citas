@@ -37,12 +37,12 @@
                                     <td>{{ $medicamento->composicion}}</td>
                                     <td>{{ $medicamento->enlace}}</td>
                                     <td>
-                                        {!! Form::open(['route' => ['medicamentos.edit',$medicamentos->id], 'method' => 'get']) !!}
+                                        {!! Form::open(['route' => ['medicamentos.edit',$medicamento->id], 'method' => 'get']) !!}
                                         {!!   Form::submit('Editar', ['class'=> 'btn btn-warning'])!!}
                                         {!! Form::close() !!}
                                     </td>
                                     <td>
-                                        {!! Form::open(['route' => ['medicamentos.destroy',$medicamentos->id], 'method' => 'delete']) !!}
+                                        {!! Form::open(['route' => ['medicamentos.destroy',$medicamento->id], 'method' => 'delete']) !!}
                                         {!!   Form::submit('Borrar', ['class'=> 'btn btn-danger' ,'onclick' => 'if(!confirm("¿Está seguro?"))event.preventDefault();'])!!}
                                         {!! Form::close() !!}
 

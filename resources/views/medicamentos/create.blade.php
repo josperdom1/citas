@@ -10,7 +10,7 @@
                     <div class="panel-body">
                         @include('flash::message')
 
-                        {!! Form::open(['route' => 'medicamentos.store','class'=>'form-inline']) !!}
+                        {!! Form::open(['route' => 'medicamentos.store']) !!}
 
                         <div class="form-group">
                             {!! Form::label('nombre', 'Nombre del medicamento') !!}
@@ -18,16 +18,17 @@
                         </div>
                         <div class="form-group">
                             {!!Form::label('presentacion', 'Presentacion') !!}
-                            {!! Form::select('presentacion', null, ['class' => 'form-control', 'required']) !!}
+                            {!! Form::text('presentacion',null,['class'=>'form-control', 'required', 'autofocus']) !!}
                         </div>
                         <div class="form-group">
                             {!!Form::label('composicion', 'Composicion') !!}
-                            {!! Form::select('composicion', null, ['class' => 'form-control', 'required']) !!}
+                            {!! Form::text('composicion',null,['class'=>'form-control', 'required', 'autofocus']) !!}
                         </div>
                         <div class="form-group">
                             {!!Form::label('enlace', 'Enlace') !!}
-                            {!! Form::select('enlace', null, ['class' => 'form-control', 'required']) !!}
+                            {!! Form::text('enlace',null,['class'=>'form-control', 'required', 'autofocus']) !!}
                         </div>
+
 
                         {!! Form::submit('Guardar',['class'=>'btn-primary btn']) !!}
 
