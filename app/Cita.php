@@ -23,11 +23,11 @@ class Cita extends Model
     protected $dates = ['fecha_hora', 'fecha_fin'];
 
     public function setFecha_horaAttribute( $value ) {
-        $this->attributes['fecha_hora'] = Carbon::parse('Y-m-d\TH:i', $value) ;
+        $this->attributes['fecha_hora'] = Carbon::createFromFormat('Y-m-d H:i:s', $value)->toDateTimeString() ;
     }
     
     public function setFecha_finAttribute( $value ) {
-        $this->attributes['fecha_fin'] = Carbon::parse('Y-m-d\TH:i', $value);
+        $this->attributes['fecha_fin'] = Carbon::createFromFormat('Y-m-d H:i:s', $value)->toDateTimeString();
     }
 
 }
