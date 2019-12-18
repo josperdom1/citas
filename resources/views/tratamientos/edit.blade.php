@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Editar tratamientoo</div>
+                    <div class="panel-heading">Editar tratamiento</div>
 
                     <div class="panel-body">
                         @include('flash::message')
@@ -13,7 +13,7 @@
                         {!! Form::model($tratamiento, [ 'route' => ['tratamientos.update',$tratamiento->id], 'method'=>'PUT']) !!}
 
                         <div class="form-group">
-                            {!! Form::label('fecha_ini', 'Fecha de inicio del tratamiento') !!}
+                            {!! Form::label('fecha_inicio', 'Fecha de inicio del tratamiento') !!}
 
                             <input type="datetime-local" id="fecha_ini" name="fecha_ini" class="form-control" value="{{Carbon\Carbon::now()->addMinute()->format('Y-m-d')}}" />
                         </div>
