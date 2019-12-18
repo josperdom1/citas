@@ -14,13 +14,11 @@ class CreateTratamientosTable extends Migration
     public function up()
     {
         Schema::create('tratamientos', function (Blueprint $table) {
-            $table->string('fecha_inicial');
-            $table->string('fecha_fin');
-            $table->string('descripcion');
-            $table->increments('id');
-            $table->dateTime('fecha_ini');
+            $table->dateTime('fecha_inicio');
             $table->dateTime('fecha_fin');
             $table->string('descripcion');
+            $table->string('nombre');
+            $table->increments('id');
             $table->timestamps();
         });
     }

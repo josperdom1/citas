@@ -18,8 +18,7 @@ class CreateMedicamentosTable extends Migration
             $table->increments('nombre');
             $table->increments('composicion');
             $table->increments('presentacion');
-            $table->increments('link');
-
+            $table->increments('enlace');
             $table->timestamps();
         });
     }
