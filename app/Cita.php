@@ -29,7 +29,7 @@ class Cita extends Model
     public function setFecha_finAttribute( $value ) {
         $this->attributes['fecha_fin'] = Carbon::parse('Y-m-d\TH:i', $value);
     }
-    //esto es para solucionar lo del carbon que sea lo que dios quiera (he puesto los 2 xq no me fio)
+
 
 
 }
