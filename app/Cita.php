@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Carbon\Carbon;
 
 class Cita extends Model
 {
@@ -22,12 +23,14 @@ class Cita extends Model
     }
     protected $dates = ['fecha_hora', 'fecha_fin'];
 
-    public function setFecha_horaAttribute( $value ) {
-        $this->attributes['fecha_hora'] = Carbon::createFromFormat('Y-m-d H:i:s', $value)->toDateTimeString() ;
+    public function setFechaHoraAttribute( $value ) {
+        $this->attributes['fecha_hora'] = Carbon::createFromFormat('Y-m-d\TH:i', $value)->toDateTimeString() ;
+        $this->attributes['fecha_hora'] = Carbon::parse($value);
     }
     
-    public function setFecha_finAttribute( $value ) {
-        $this->attributes['fecha_fin'] = Carbon::createFromFormat('Y-m-d H:i:s', $value)->toDateTimeString();
+    public function setFechaFinAttribute( $value ) {
+        $this->attributes['fecha_fin'] = Carbon::createFromFormat('Y-m-d\TH:i', $value)->toDateTimeString() ;
+        $this->attributes['fecha_fin'] = Carbon::parse($value);
     }
 
 }

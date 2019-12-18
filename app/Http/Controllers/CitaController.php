@@ -70,7 +70,6 @@ class CitaController extends Controller
 
 
         $cita = new Cita($request->all());
-        $cita->fecha_fin = $cita->fecha_hora->addMinutes(15);
         $cita->save();
 
 
@@ -131,7 +130,7 @@ class CitaController extends Controller
         ]);
 
         $cita = Cita::find($id);
-        $cita->fill($request->all());
+        $cita->fill(array_merge($request->all(),['index'=>date('fecha_hora',strtotime("+15 minutes"))]));
 
         $cita->save();
 

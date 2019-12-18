@@ -30,9 +30,9 @@
                                 <tr>
                                     <td>{{ $cita->fecha_hora }}</td>
                                     <td>{{ ($cita->fecha_fin)}}</td>
-                                    <td>{{ $cita->medico->nombre }}</td>
-                                    <td>{{ $cita->paciente->nombre}}</td>
-                                    <td>{{ $cita->localizacion->nombre}}</td>
+                                    <td>{{ $cita->medico_id }}</td>
+                                    <td>{{ $cita->paciente_id}}</td>
+                                    <td>{{ $cita->localizacion_id}}</td>
                                     <td>
                                         {!! Form::open(['route' => ['citas.edit',$cita->id], 'method' => 'get']) !!}
                                         {!!   Form::submit('Editar', ['class'=> 'btn btn-warning'])!!}
