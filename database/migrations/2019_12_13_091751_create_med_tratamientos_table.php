@@ -15,13 +15,13 @@ class CreateMedTratamientosTable extends Migration
     {
         Schema::create('med_tratamientos', function (Blueprint $table) {
             $table->increments('id');
-            $table->increments('fecha_inicial');
-            $table->increments('fecha_final');
-            $table->increments('unidades');
-            $table->increments('frecuencia');
-            $table->increments('instruccion');
-            $table->unsignedInteger('tratamiento_id');
-            $table->foreign('tratamiento_id')->references('id')->on('tratamientos')->onDelete('cascade')->onUpdate('cascade');
+            $table->unsignedBigInteger('medicamento_id');
+            $table->unsignedBigInteger('tratamiento_id');
+            $table->dateTime('fecha_ini');
+            $table->dateTime('fecha_fin');
+            $table->string('frecuencia');
+            $table->string('unidades');
+            $table->string('instrucciones');
             $table->timestamps();
         });
     }

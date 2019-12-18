@@ -6,11 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Medicamento extends Model
 {
-    protected $fillable = ['nombre', 'composicion', 'descripcion', 'link'];
+    protected $fillable = ['nombre', 'composicion', 'descripcion', 'enlace'];
 
-    public function medTratamientos()
+    public function tratamientos()
     {
-        return $this->belongsToMany('App\MedTratamiento');
+        return $this->belongsToMany('App\Tratamiento');
     }
 
 

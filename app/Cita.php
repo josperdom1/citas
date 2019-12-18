@@ -22,11 +22,12 @@ class Cita extends Model
     }
     protected $dates = ['fecha_hora', 'fecha_fin'];
 
-    public function setDateTimeAttribute( $value ) {
-        $this->attributes['fecha_hora'] = (new Carbon($value))->format('d/m/y');
+    public function setFecha_horaAttribute( $value ) {
+        $this->attributes['fecha_hora'] = Carbon::parse('Y-m-d\TH:i', $value) ;
     }
-    public function setDateTime2Attribute( $value ) {
-        $this->attributes['fecha_fin'] = (new Carbon($value))->format('d/m/y');
+    
+    public function setFecha_finAttribute( $value ) {
+        $this->attributes['fecha_fin'] = Carbon::parse('Y-m-d\TH:i', $value);
     }
     //esto es para solucionar lo del carbon que sea lo que dios quiera (he puesto los 2 xq no me fio)
 
