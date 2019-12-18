@@ -18,6 +18,9 @@ class CreateTratamientosTable extends Migration
             $table->string('fecha_fin');
             $table->string('descripcion');
             $table->increments('id');
+            $table->dateTime('fecha_ini');
+            $table->dateTime('fecha_fin');
+            $table->string('descripcion');
             $table->timestamps();
         });
     }

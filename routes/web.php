@@ -13,6 +13,10 @@
 
 Route::get('/', function () {
     return view('welcome');
+
+
+
+
 });
 //Poner las acciones definidas por el programador antes del CRUD por defecto que monta Laravel
 Route::delete('especialidads/destroyAll', 'EspecialidadController@destroyAll')->name('especialidads.destroyAll');
