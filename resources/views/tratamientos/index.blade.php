@@ -13,13 +13,14 @@
                         {!!   Form::submit('Crear tratamiento', ['class'=> 'btn btn-primary'])!!}
                         {!! Form::close() !!}
 
+
                         <br><br>
                         <table class="table table-striped table-bordered">
                             <tr>
+                                <th>Nombre<th>
+                                <th>Descripcion<th>
                                 <th>Fecha de inicio</th>
                                 <th>Fecha de finalizacion</th>
-                                <th>Descripcion<th>
-                                <th>Nombre<th>
                                 <th colspan="2">Acciones</th>
                             </tr>
 
@@ -27,10 +28,10 @@
 
 
                                 <tr>
-                                    <td>{{ $tratamiento->fecha_hora }}</td>
-                                    <td>{{ $tratamiento->fecha_fin }}</td>
-                                    <td>{{ $tratamiento->descripcion}}</td>
-                                    <td>{{ $tratamiento->nombre}}</td>
+                                    <td>{{ $tratamiento->nombre }}</td>
+                                    <td>{{ $tratamiento->descripcion }}</td>
+                                    <td>{{ $tratamiento->fecha_hora}}</td>
+                                    <td>{{ $tratamiento->fecha_fin}}</td>
 
 
                                     <td>
